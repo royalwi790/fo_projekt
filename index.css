@@ -1,0 +1,84 @@
+:root {
+    --primary-color: #4A90E2;
+    --secondary-color: #D4E4F7;
+    --accent-color: #2C6BA0;
+    --text-color: #ffffff;
+    --bg-color: #F5F8FC;
+}
+
+.egész {
+    background-color: var(--primary-color);
+    text-align: center;
+    color: var(--text-color);
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px); /* Kezdő pozíció */
+    }
+    50% {
+        opacity: 0.5; /* Középső állapot átlátszósága */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Végső pozíció */
+    }
+}
+
+header {
+    background-color: var(--secondary-color);
+    color: var(--accent-color);
+    animation: fadeIn 2.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Hosszabb időtartam */
+    text-align: center;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+main {
+    animation: fadeIn 2s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Simább animáció */
+}
+footer {
+    background-color: #333;
+    color: var(--text-color);
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    animation: fadeIn 3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Simább animáció */
+}
+#task-input {
+    background-color: var(--bg-color);
+    color: black;
+    opacity: 1;
+}
+h1 {
+    font-family: "Copperlatte", "Courier New", monospace;
+}
+#add-task-btn {
+    font-weight: 700;
+}
+#task-list {
+    list-style-type: none; /* Eltávolítja a listajelöléseket */
+    padding: 0; /* Eltávolítja a paddingot a listáról */
+    display: flex; /* Flexbox elrendezés */
+    flex-direction: column; /* Függőleges irányba igazítás */
+    align-items: center; /* Középre igazítás */
+}
+
+#task-list li {
+    display: flex; /* Flexbox elrendezés az li elemeknél is */
+    align-items: center; /* Középre igazítja az elemeket */
+    justify-content: center; /* Középre igazítás a tartalom számára */
+    margin-bottom: 10px; /* Különbség az elemek között */
+}
+#task-list img {
+    max-width: 30px; /* Maximális szélesség */
+    max-height: 30px; /* Maximális magasság */
+    width: auto; /* Automatikus szélesség */
+    height: auto; /* Automatikus magasság */
+    margin-right: 10px; /* Különbség a kép és a leírás között */
+}
+
