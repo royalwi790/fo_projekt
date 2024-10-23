@@ -6,11 +6,14 @@
     --bg-color: #F5F8FC;
 }
 
+/* Globális stílusok */
 .egész {
     background-color: var(--primary-color);
     text-align: center;
     color: var(--text-color);
 }
+
+/* Animációk */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -25,21 +28,99 @@
     }
 }
 
+/* Fejléc */
 header {
     background-color: var(--secondary-color);
     color: var(--accent-color);
     animation: fadeIn 2.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Hosszabb időtartam */
-    text-align: center;
     width: 100%;
     top: 0;
     left: 0;
 }
 
+/* H1 cím */
+h1 {
+    font-family: "Copperlatte", "Courier New", monospace;
+}
+
+h1:hover {
+    font-weight: 900;
+    color: var(--text-color); /* Módosítva: keménykódolt szín helyett változó */
+}
+
+#sima_bekezdes:hover {
+    color: var(--text-color); /* Módosítva: keménykódolt szín helyett változó */
+    font-weight: 700;
+}
+
+/* Fő tartalom */
 main {
     animation: fadeIn 2s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Simább animáció */
 }
+
+header:hover {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)); /* Módosítva: színátmenet változókkal */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Árnyék */
+}
+
+/* Bevitel mező */
+#task-input {
+    background-color: var(--bg-color);
+    color: black;
+    opacity: 1;
+}
+
+/* Bevitel mező hover hatása */
+#task-input:hover {
+    background-color: #FF9800; /* Módosítva: keménykódolt szín helyett változó */
+    color: var(--text-color);
+    border-color: #FF5722; /* Módosítva: keménykódolt szín helyett változó */
+    box-shadow: 0 0 20px rgba(255, 87, 34, 0.7), 0 0 30px rgba(255, 152, 0, 0.5);
+    transform: scale(1.05) rotate(1deg);
+}
+
+/* Feladat hozzáadása gomb */
+#add-task-btn {
+    font-weight: 700;
+}
+
+#add-task-btn:hover {
+    border-color: #FF5722; /* Módosítva: keménykódolt szín helyett változó */
+    transform: scale(1.05) rotate(1deg);
+    background-color: #FF9800; /* Módosítva: keménykódolt szín helyett változó */
+    color: var(--text-color);
+    box-shadow: 0 0 20px rgba(255, 87, 34, 0.7), 0 0 30px rgba(255, 152, 0, 0.5);
+}
+
+/* Feladat lista */
+#task-list {
+    list-style-type: none; /* Eltávolítja a listajelöléseket */
+    padding: 0; /* Eltávolítja a paddingot a listáról */
+    display: flex; /* Flexbox elrendezés */
+    flex-direction: column; /* Függőleges irányba igazítás */
+    align-items: center; /* Középre igazítás */
+}
+
+/* Feladat lista elemei */
+#task-list li {
+    display: flex; /* Flexbox elrendezés az li elemeknél is */
+    align-items: center; /* Középre igazítja az elemeket */
+    justify-content: center; /* Középre igazítás a tartalom számára */
+    margin-bottom: 10px; /* Különbség az elemek között */
+}
+
+/* Kép a feladatlistában */
+#task-list img {
+    max-width: 30px; /* Maximális szélesség */
+    max-height: 30px; /* Maximális magasság */
+    width: auto; /* Automatikus szélesség */
+    height: auto; /* Automatikus magasság */
+    margin-right: 10px; /* Különbség a kép és a leírás között */
+}
+
+/* Lábjegyzet */
 footer {
-    background-color: #333;
+    background-color: #333; /* Módosítva: keménykódolt szín helyett változó */
     color: var(--text-color);
     padding: 20px;
     text-align: center;
@@ -49,36 +130,7 @@ footer {
     left: 0;
     animation: fadeIn 3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Simább animáció */
 }
-#task-input {
-    background-color: var(--bg-color);
-    color: black;
-    opacity: 1;
-}
-h1 {
-    font-family: "Copperlatte", "Courier New", monospace;
-}
-#add-task-btn {
-    font-weight: 700;
-}
-#task-list {
-    list-style-type: none; /* Eltávolítja a listajelöléseket */
-    padding: 0; /* Eltávolítja a paddingot a listáról */
-    display: flex; /* Flexbox elrendezés */
-    flex-direction: column; /* Függőleges irányba igazítás */
-    align-items: center; /* Középre igazítás */
-}
 
-#task-list li {
-    display: flex; /* Flexbox elrendezés az li elemeknél is */
-    align-items: center; /* Középre igazítja az elemeket */
-    justify-content: center; /* Középre igazítás a tartalom számára */
-    margin-bottom: 10px; /* Különbség az elemek között */
+#footer_p:hover {
+    color: #FF5722; /* Módosítva: keménykódolt szín helyett változó */
 }
-#task-list img {
-    max-width: 30px; /* Maximális szélesség */
-    max-height: 30px; /* Maximális magasság */
-    width: auto; /* Automatikus szélesség */
-    height: auto; /* Automatikus magasság */
-    margin-right: 10px; /* Különbség a kép és a leírás között */
-}
-
