@@ -5,17 +5,20 @@ document.getElementById('add-task-btn').addEventListener('click', function() {
     if (taskText) {
         addTask(taskText);
         taskInput.value = "";
+        saveTasks();
     } else {
         alert("Kérjük, adjon meg egy feladatot.");
     }
 });
 
-function addTask(taskText) {
+function addTask(taskText, completed = false) {
     const li = document.createElement('li');
-    
+    li.classList.add('task-item');
+
     const span = document.createElement('span');
     span.textContent = taskText;
     span.classList.add('task-text');
+    if (completed) span.classList.add('completed');
 
     const img = document.createElement('img');
     img.src = '../fo_projekt/img/dumbell.png';
@@ -30,6 +33,7 @@ function addTask(taskText) {
         const newTaskText = prompt("Szerkessze a feladatot:", taskText);
         if (newTaskText !== null && newTaskText.trim()) {
             span.textContent = newTaskText.trim();
+            saveTasks();
         }
     });
 
@@ -39,10 +43,12 @@ function addTask(taskText) {
 
     deleteBtn.addEventListener('click', function() {
         li.remove();
+        saveTasks();
     });
 
     span.addEventListener('click', function() {
         span.classList.toggle('completed');
+        saveTasks();
     });
 
     li.appendChild(img);
@@ -51,3 +57,21 @@ function addTask(taskText) {
     li.appendChild(deleteBtn);
     document.getElementById('task-list').appendChild(li);
 }
+
+function saveTasks() {
+    const tasks = [];
+    document.querySelectorAll('.task-item').forEach(task => {
+        tasks.push({
+            text: task.querySelector('.task-text').textContent,
+            completed: task.querySelector('.task-text').classList.contains('completed')
+        });
+    });
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+function loadTasks() {
+    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    tasks.forEach(task => addTask(task.text, task.completed));
+}
+
+window.addEventListener('load', loadTasks);

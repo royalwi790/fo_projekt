@@ -146,3 +146,14 @@ footer {
 .delete-btn {
     margin-left: 5px;
 }
+
+.completed {
+    text-decoration: line-through;
+    color: var(--text-color);
+}
+
+.task-text:hover {
+    cursor: pointer;
+}
+
+
