@@ -1,4 +1,14 @@
 document.getElementById('add-task-btn').addEventListener('click', function() {
+    addTaskFromInput();
+});
+
+document.getElementById('task-input').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        addTaskFromInput();
+    }
+});
+
+function addTaskFromInput() {
     const taskInput = document.getElementById('task-input');
     const taskText = taskInput.value.trim();
 
@@ -9,7 +19,7 @@ document.getElementById('add-task-btn').addEventListener('click', function() {
     } else {
         alert("Kérjük, adjon meg egy feladatot.");
     }
-});
+}
 
 function addTask(taskText, completed = false) {
     const li = document.createElement('li');

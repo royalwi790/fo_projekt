@@ -6,4 +6,5 @@ v.1.3.0: index.html, index.css, index.js szerkesztése, feladatkezelő weboldal 
 v.1.4.0: index.css módositása, :hover elemek beiktatása, commit 5.  
 v.1.5.1: javascript buttonok:hover szerkesztése, megjegyzések eltávolitása  
 v1.6.2: áthúzás hiba kijavitása, js elemek:hover szerkesztése, létrehozott feladatok mentése a helyi tárhelyre, új stiluslap  
-v1.6.3: README.md módositása
+v1.6.3: README.md módositása  
+v1.7.3: Feladat hozzáadása "ENTER" billenytű lenyomásával
