@@ -6,6 +6,7 @@
     --highlight-hover: #FF5722;
     --text-color: #ffffff;
     --bg-color: #F5F8FC;
+    --border-color: #000000;
 }
 
 body {
@@ -175,3 +176,23 @@ footer {
     color: var(--highlight-hover);
     transition: color 0.4s ease;
 }
+
+.star-btn {
+    cursor: pointer;
+    color: var(--bg-color);
+    font-size: 1.5rem;
+    text-shadow: 
+        1px 1px 0 var(--border-color),
+        -1px 1px 0 var(--border-color),
+        1px -1px 0 var(--border-color),
+        -1px -1px 0 var(--border-color);
+    transition: transform 0.3s ease;
+    margin-right: 10px;
+}
+
+
+.star-btn.starred {
+    color: var(--highlight-color);
+    transform: scale(1.2);
+}
+

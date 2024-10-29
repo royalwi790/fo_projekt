@@ -21,9 +21,21 @@ function addTaskFromInput() {
     }
 }
 
-function addTask(taskText, completed = false) {
+function addTask(taskText, completed = false, starred = false) {
     const li = document.createElement('li');
     li.classList.add('task-item');
+
+    // Csillag gomb hozzáadása a feladathoz
+    const starBtn = document.createElement('span');
+    starBtn.textContent = '★';
+    starBtn.classList.add('star-btn');
+    if (starred) starBtn.classList.add('starred');
+
+    // Csillagozás esemény kezelése
+    starBtn.addEventListener('click', function() {
+        starBtn.classList.toggle('starred');
+        saveTasks();
+    });
 
     const span = document.createElement('span');
     span.textContent = taskText;
@@ -61,6 +73,8 @@ function addTask(taskText, completed = false) {
         saveTasks();
     });
 
+    // Csillag gomb hozzáadása a feladat elemhez
+    li.appendChild(starBtn);
     li.appendChild(img);
     li.appendChild(span);
     li.appendChild(editBtn);
@@ -73,7 +87,8 @@ function saveTasks() {
     document.querySelectorAll('.task-item').forEach(task => {
         tasks.push({
             text: task.querySelector('.task-text').textContent,
-            completed: task.querySelector('.task-text').classList.contains('completed')
+            completed: task.querySelector('.task-text').classList.contains('completed'),
+            starred: task.querySelector('.star-btn').classList.contains('starred') // Csillagozott állapot mentése
         });
     });
     localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -81,7 +96,8 @@ function saveTasks() {
 
 function loadTasks() {
     const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-    tasks.forEach(task => addTask(task.text, task.completed));
+    tasks.forEach(task => addTask(task.text, task.completed, task.starred));
 }
 
+// Az oldal betöltésekor a feladatok betöltése
 window.addEventListener('load', loadTasks);
