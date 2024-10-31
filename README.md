@@ -10,4 +10,5 @@ v1.6.3: README.md módositása
 v1.7.3: Feladat hozzáadása "ENTER" billenytű lenyomásával  
 v1.8.3: Új külső stiluslap alkalmazása  
 v1.9.3: Feladatok megcsillagozása  
-v1.10.3: Favicon.ico hozzáadása
+v1.10.3: Favicon.ico hozzáadása  
+v1.11.3: Reszponziv megjelenés
