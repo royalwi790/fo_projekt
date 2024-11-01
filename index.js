@@ -99,5 +99,22 @@ function loadTasks() {
     tasks.forEach(task => addTask(task.text, task.completed, task.starred));
 }
 
-// Az oldal betöltésekor a feladatok betöltése
 window.addEventListener('load', loadTasks);
+
+function toggleDropdown() {
+    const dropdown = document.getElementById("dropdown-menu");
+    if (dropdown.style.display === "none" || dropdown.style.display === "") {
+        dropdown.style.display = "block";
+    } else {
+        dropdown.style.display = "none";
+    }
+}
+
+document.addEventListener("click", function(event) {
+    const dropdown = document.getElementById("dropdown-menu");
+    const profileIcon = document.querySelector(".profile-icon");
+
+    if (!dropdown.contains(event.target) && event.target !== profileIcon) {
+        dropdown.style.display = "none";
+    }
+});

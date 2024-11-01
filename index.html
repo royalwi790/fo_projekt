@@ -10,6 +10,13 @@
 </head>
 <body>
     <header>
+        <div class="dropdown">
+            <img src="../fo_projekt/img/default_profile_icon.png" alt="Profilkép" class="profile-icon" onclick="toggleDropdown()">
+            
+            <ul id="dropdown-menu" class="dropdown-content">
+                <li>Regisztráció/Bejelentkezés</li>
+            </ul>
+        </div>
         <h1>Feladatkezelő</h1>
         <p id="sima_bekezdes">Adja hozzá, szerkessze vagy törölje feladatait!</p>
     </header>
@@ -24,7 +31,7 @@
     </main>
 
     <footer>
-        <p id="footer_p">&copy; 2024 Feladatkezelő App</p>
+        <p id="footer_p">&copy; Task Manager v1.12.3</p>
     </footer>
 
     <script src="index.js"></script>
